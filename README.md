@@ -67,8 +67,7 @@ Configuração Inicial:
 
 3. Execução do Teste:
 
-- Escreva um caso de teste utilizando o framework Jest para a rota api/classes;
-- Prepare os dados necessários para criar um novo workshop;
+- Inicie o teste com npm run test. Alternativamente, sete a variável de ambiente TEST=TRUE npx jest;
 - Envie uma solicitação HTTP POST para a rota api/classes com os dados preparados;
 - Obtenha a resposta da solicitação;
   
@@ -114,7 +113,7 @@ Se a resposta da solicitação não contiver todos os campos esperados do worksh
 Se a rota api/classes tiver validações de entrada para os dados enviados na solicitação como campos obrigatórios e formato de dados inválido e a solicitação não atender a essas validações, a resposta pode conter um erro indicando falha na validação.
 
 # 8. Resultado obtido
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;O resultado obtido após a execução do teste automatizado foi positivo. O teste verificou se a criação de um novo workshop foi realizada com sucesso na aplicação. Após enviar uma requisição POST para a rota de criação de workshops, utilizando dados mockados, verificou-se que a resposta retornou o código de status HTTP 201, indicando que a requisição foi bem-sucedida.
 
 # 9. Pós-condição
 &nbsp;&nbsp;&nbsp;&nbsp;Após a execução bem-sucedida do teste, um novo workshop deve ser criado no sistema contendo todos os dados relevantes, além de estar disponível para consulta e manipulação posterior. Em resumo, a pós-condição inclui:
@@ -124,7 +123,11 @@ Se a rota api/classes tiver validações de entrada para os dados enviados na so
 3. O sistema deve permanecer em um estado consistente e funcional, pronto para lidar com operações adicionais sem comprometer a integridade dos dados ou a estabilidade do sistema.
 
 # 10. Código do Teste
-&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<img src="código.png" alt="Código" border="1">
+
+&nbsp;&nbsp;&nbsp;&nbsp;Este teste automatizado tem como objetivo verificar se a criação de um novo workshop é realizada com sucesso. Inicialmente, são importados os módulos necessários, incluindo o supertest para fazer requisições HTTP e o app, que representa a aplicação a ser testada. Em seguida, é definido um conjunto de testes utilizando a função describe() do Jest, indicando que se trata de testes para a criação de workshops. 
+&nbsp;&nbsp;&nbsp;&nbsp;Dentro deste conjunto de testes, há um teste específico que verifica se um workshop é criado com sucesso. Para isso, são definidos dados de uma nova ONG, pois é necessário criá-la para permitir o POST de um novo workshop. A sincronização do banco de dados é feita utilizando a função dbSync(). Em seguida, é feita uma requisição POST para a rota de criação de ONGs (/api/ongs) e outra requisição POST para a rota de criação de workshops (/api/classes), utilizando os dados preparados anteriormente. Após o envio da requisição, o teste verifica se a resposta possui o código de status HTTP 201 (indicando que a requisição foi bem-sucedida), e se o corpo da resposta contém as informações do workshop criado, como o nome do workshop e a categoria.
 
 # 11. Conclusão
 &nbsp;&nbsp;&nbsp;&nbsp;Concluindo, ao verificar se a solicitação POST é processada com sucesso, se a resposta retorna um status HTTP 200 OK e se os dados do workshop criado correspondem aos dados enviados na solicitação, podemos garantir a integridade e a precisão da operação de criação de workshops. Ao seguir os procedimentos de teste e analisar os resultados, podemos identificar e corrigir quaisquer problemas potenciais, garantindo assim um sistema robusto e confiável.

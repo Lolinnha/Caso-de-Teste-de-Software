@@ -113,6 +113,7 @@ Se a resposta da solicitação não contiver todos os campos esperados do worksh
 Se a rota api/classes tiver validações de entrada para os dados enviados na solicitação como campos obrigatórios e formato de dados inválido e a solicitação não atender a essas validações, a resposta pode conter um erro indicando falha na validação.
 
 # 8. Resultado obtido
+<img src="teste.png" alt="Teste" border="1">
 &nbsp;&nbsp;&nbsp;&nbsp;O resultado obtido após a execução do teste automatizado foi positivo. O teste verificou se a criação de um novo workshop foi realizada com sucesso na aplicação. Após enviar uma requisição POST para a rota de criação de workshops, utilizando dados mockados, verificou-se que a resposta retornou o código de status HTTP 201, indicando que a requisição foi bem-sucedida.
 
 # 9. Pós-condição

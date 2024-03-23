@@ -34,10 +34,10 @@
 
 # 2. Descrição 
 
-&nbsp;&nbsp;&nbsp;&nbsp;Este teste automatizado verifica a funcionalidade de criação de workshops através da rota api/classes. O teste envia uma solicitação HTTP POST com dados de exemplo para a criação de uma nova classe e verifica se a resposta retorna o status HTTP 200 OK.
+&nbsp;&nbsp;&nbsp;&nbsp;Este teste automatizado verifica a funcionalidade de criação de workshops através da rota api/classes. O teste envia uma solicitação HTTP POST com dados de exemplo para a criação de uma nova classe e verifica se a resposta retorna o status HTTP 201 OK.
 
 # 3. Propósito 
-&nbsp;&nbsp;&nbsp;&nbsp;O propósito do teste é validar a integridade e a funcionalidade da rota api/classes responsável pela criação de workshops no sistema. Ele verifica se a criação de classes é realizada corretamente, garantindo que os dados enviados na solicitação POST sejam processados adequadamente e que a resposta retorne um status HTTP 200 OK. Além disso, o teste busca confirmar se os dados da classe criada são consistentes com as informações fornecidas na solicitação, assegurando que o sistema esteja capturando e armazenando corretamente os detalhes do workshop. 
+&nbsp;&nbsp;&nbsp;&nbsp;O propósito do teste é validar a integridade e a funcionalidade da rota api/classes responsável pela criação de workshops no sistema. Ele verifica se a criação de classes é realizada corretamente, garantindo que os dados enviados na solicitação POST sejam processados adequadamente e que a resposta retorne um status HTTP 201 OK. Além disso, o teste busca confirmar se os dados da classe criada são consistentes com as informações fornecidas na solicitação, assegurando que o sistema esteja capturando e armazenando corretamente os detalhes do workshop. 
 
 # 4. Pré-condição
 &nbsp;&nbsp;&nbsp;&nbsp;Para realizar o teste automatizado verificando a funcionalidade de criação de workshops, é fundamental garantir que todas as condições necessárias estejam devidamente configuradas e disponíveis. Esta etapa preparatória é essencial para garantir que o teste seja executado em um ambiente controlado. São as pré-condições necessárias:
@@ -73,7 +73,7 @@ Configuração Inicial:
   
 4. Avaliação dos Resultados:
 
-- Verifique se a resposta retorna um status HTTP 200 OK;
+- Verifique se a resposta retorna um status HTTP 201 OK;
 - Verifique se os dados do workshop criado na resposta correspondem aos dados enviados na solicitação;
 - Assegure-se de que o workshop foi criado com sucesso e que todos os campos relevantes foram capturados e armazenados corretamente.
   
@@ -89,7 +89,7 @@ Configuração Inicial:
 # 6. Resultado Esperado
 &nbsp;&nbsp;&nbsp;&nbsp;O resultado esperado é que a solicitação POST seja processada com sucesso e os dados do workshop criado na resposta corresponda exatamente aos dados enviados na solicitação Em resumo, o resultado esperado inclui:
 
-1. A resposta da solicitação deve retornar um status HTTP 200 OK; 
+1. A resposta da solicitação deve retornar um status HTTP 201 OK; 
    
 2. Os dados da classe criada na resposta devem corresponder exatamente aos dados enviados na solicitação;
    
@@ -100,9 +100,9 @@ Configuração Inicial:
 # 7. Resultados que podem indicar erro
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-1. Resposta com status HTTP diferente de 200:
+1. Resposta com status HTTP diferente de 201:
 
-Espera-se que a resposta da solicitação retorne um status HTTP 200 OK para indicar que a criação da classe foi bem-sucedida. Se a resposta retornar um status diferente, como 404 (Not Found), 500 (Internal Server Error), ou outro código de erro, isso indicará um problema na execução da rota ou no processamento da solicitação.
+Espera-se que a resposta da solicitação retorne um status HTTP 201 OK para indicar que a criação da classe foi bem-sucedida. Se a resposta retornar um status diferente, como 404 (Not Found), 500 (Internal Server Error), ou outro código de erro, isso indicará um problema na execução da rota ou no processamento da solicitação.
 
 2. Campos ausentes na resposta:
 
@@ -130,4 +130,4 @@ Se a rota api/classes tiver validações de entrada para os dados enviados na so
 &nbsp;&nbsp;&nbsp;&nbsp;Dentro deste conjunto de testes, há um teste específico que verifica se um workshop é criado com sucesso. Para isso, são definidos dados de uma nova ONG, pois é necessário criá-la para permitir o POST de um novo workshop. A sincronização do banco de dados é feita utilizando a função dbSync(). Em seguida, é feita uma requisição POST para a rota de criação de ONGs (/api/ongs) e outra requisição POST para a rota de criação de workshops (/api/classes), utilizando os dados preparados anteriormente. Após o envio da requisição, o teste verifica se a resposta possui o código de status HTTP 201 (indicando que a requisição foi bem-sucedida), e se o corpo da resposta contém as informações do workshop criado, como o nome do workshop e a categoria.
 
 # 11. Conclusão
-&nbsp;&nbsp;&nbsp;&nbsp;Concluindo, ao verificar se a solicitação POST é processada com sucesso, se a resposta retorna um status HTTP 200 OK e se os dados do workshop criado correspondem aos dados enviados na solicitação, podemos garantir a integridade e a precisão da operação de criação de workshops. Ao seguir os procedimentos de teste e analisar os resultados, podemos identificar e corrigir quaisquer problemas potenciais, garantindo assim um sistema robusto e confiável.
+&nbsp;&nbsp;&nbsp;&nbsp;Concluindo, ao verificar se a solicitação POST é processada com sucesso, se a resposta retorna um status HTTP 201 OK e se os dados do workshop criado correspondem aos dados enviados na solicitação, podemos garantir a integridade e a precisão da operação de criação de workshops. Ao seguir os procedimentos de teste e analisar os resultados, podemos identificar e corrigir quaisquer problemas potenciais, garantindo assim um sistema robusto e confiável.
